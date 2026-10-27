@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import LegalFooterLinks from './legal-footer-links';
 
 import { BUSINESSES, COMPANY } from '@/lib/site'
 import { ContactDialogTrigger } from '@/components/forms/contact-dialog-trigger'
@@ -189,15 +190,17 @@ export function SiteFooter() {
         </div>
 
         {/* COPYRIGHT */}
-        <div className="mt-12 flex flex-col gap-4 border-t border-ivory/15 pt-6 text-xs text-ivory/50 md:flex-row md:items-center md:justify-between">
-          <p>
-            © {new Date().getFullYear()} {COMPANY.name}. All rights reserved.
-          </p>
+        <div className="mt-12 flex flex-col gap-4 border-t border-ivory/15 pt-6 text-xs text-ivory/50 md:flex-row md:flex-wrap md:items-center md:justify-between">
+        <p>
+          © {new Date().getFullYear()} {COMPANY.name}. All rights reserved.
+        </p>
 
-          <p className="font-serif text-sm italic text-sand/75">
-            {COMPANY.tagline}
-          </p>
-        </div>
+        <LegalFooterLinks />
+
+        <p className="font-serif text-sm italic text-sand/75">
+         {COMPANY.tagline}
+       </p>
+       </div>
       </div>
     </footer>
   )
